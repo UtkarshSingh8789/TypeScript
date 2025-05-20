@@ -110,36 +110,48 @@ let t:TeamLead={
 // Should it be numbers? (1, 2, 3, 4) ?
 //The best thing to use in such a case is an enum.
 
-enum Direction{
-    Up,
-    Down,
-    Left,
-    Right
+// enum Direction{
+//     Up,
+//     Down,
+//     Left,
+//     Right
+// }
+// function doSomething(direction:Direction){
+//     console.log(direction)
+// }
+// doSomething(Direction.Up)// by default zero, we can change the default value also;
+// // if we change the Up value to 1; then by default the value od down will be 2 and so on;
+// enum Directions{
+//     Up="up",
+//     Down="dn",
+//     Left="lf",
+//     Right="r"
+// }
+// console.log(Directions.Down)
+// function doThis(direction:Directions){
+//     if (direction === Directions.Up) {
+//         console.log("Going Up");
+//     } else if (direction === Directions.Down) {
+//         console.log("Going Down");
+//     } else if (direction === Directions.Left) {
+//         console.log("Going Left");
+//     } else if (direction === Directions.Right) {
+//         console.log("Going Right");
+//     } else {
+//         console.log("Unknown direction");
+//     }
+// }
+// doThis(Directions.Up)
+// doThis(Directions.Left)
+
+interface User{
+    id:string;
+    name:string;
+    age:string;
+    email:string;
+    password:string;
 }
-function doSomething(direction:Direction){
-    console.log(direction)
+type updateProps=Pick<User,'name' | 'age' | 'email'>
+function updateUser(updatedProps:updateProps){ // only we have to name age email
+
 }
-doSomething(Direction.Up)// by default zero, we can change the default value also;
-// if we change the Up value to 1; then by default the value od down will be 2 and so on;
-enum Directions{
-    Up="up",
-    Down="dn",
-    Left="lf",
-    Right="r"
-}
-console.log(Directions.Down)
-function doThis(direction:Directions){
-    if (direction === Directions.Up) {
-        console.log("Going Up");
-    } else if (direction === Directions.Down) {
-        console.log("Going Down");
-    } else if (direction === Directions.Left) {
-        console.log("Going Left");
-    } else if (direction === Directions.Right) {
-        console.log("Going Right");
-    } else {
-        console.log("Unknown direction");
-    }
-}
-doThis(Directions.Up)
-doThis(Directions.Left)
